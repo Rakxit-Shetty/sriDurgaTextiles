@@ -55,14 +55,15 @@ const TopNav = () => {
             </a>
           </li>
           <li>
-            <a href="#">{t("about_us")}</a>
+            {/* <a href="#">{t("about_us")}</a> */}
+            Follow us 
           </li>
           <li>
-            <a href="#">{t("our_policy")}</a>
+            {/* <a href="#">{t("our_policy")}</a> */}
           </li>
         </ul>
         <ul className={`flex ${styles.topRightMenu}`}>
-          <li>
+          {/* <li>
             <Menu as="div" className="relative">
               <Menu.Button as="a" href="#" className="flex">
                 {locale === "en" ? t("eng") : t("myn")} <DownArrow />
@@ -127,7 +128,7 @@ const TopNav = () => {
                 </Menu.Item>
               </Menu.Items>
             </Menu>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

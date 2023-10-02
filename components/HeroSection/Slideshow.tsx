@@ -17,11 +17,12 @@ const sliders = [
   {
     id: 2,
     image: "/bg-img/curly_hair_girl-1.jpg",
+    // image:"/bg-img/bgimg1.jpg",
     imageTablet: "/bg-img/curly_hair_girl-1-tablet.png",
     imageMobile: "/bg-img/curly_hair_girl-1_mobile.jpg",
-    subtitle: "50% off",
-    titleUp: "New Cocktail",
-    titleDown: "Dresses",
+    subtitle: "Best Deals",
+    titleUp: "Sri Durga Textiles,",
+    titleDown: "Ajekar",
     rightText: false,
   },
   {
@@ -29,9 +30,9 @@ const sliders = [
     image: "/bg-img/curly_hair_white-1.jpg",
     imageTablet: "/bg-img/curly_hair_white-1-tablet.png",
     imageMobile: "/bg-img/curly_hair_white-1_mobile.jpg",
-    subtitle: "Spring Revolution",
-    titleUp: "Night Summer",
-    titleDown: "Dresses",
+    subtitle: "Best Deals",
+    titleUp: "Sri Durga Textiles,",
+    titleDown: "Ajekar",
     rightText: true,
   },
   {
@@ -39,9 +40,9 @@ const sliders = [
     image: "/bg-img/monigote.jpg",
     imageTablet: "/bg-img/monigote-tablet.png",
     imageMobile: "/bg-img/monigote_mobile.jpg",
-    subtitle: "Spring promo",
-    titleUp: "The Weekend",
-    titleDown: "Promotions",
+    subtitle: "Best Deals",
+    titleUp: "Sri Durga Textiles,",
+    titleDown: "Ajekar",
     rightText: false,
   },
 ];
@@ -113,7 +114,8 @@ const Slideshow = () => {
                   {slider.titleUp} <br />
                   {slider.titleDown}
                 </span>
-                <TextButton value={t("shop_now")} />
+                {/* <TextButton value={t("shop_now")} /> */}
+                Come Visit
               </div>
             </SwiperSlide>
           ))}

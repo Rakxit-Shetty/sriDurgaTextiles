@@ -14,7 +14,8 @@ import { apiProductsType, itemType } from "../context/cart/cart-types";
 import LinkButton from "../components/Buttons/LinkButton";
 
 // /bg-img/ourshop.png
-import ourShop from "../public/bg-img/ourshop.png";
+// import ourShop from "../public/bg-img/ourshop.png";
+import ourShop from "../public/bg-img/bgimg3.jpg";
 
 type Props = {
   products: itemType[];
@@ -71,8 +72,9 @@ const Home: React.FC<Props> = ({ products }) => {
                   href="/product-category/new-arrivals"
                   extraClass="absolute bottom-10-per sm:right-10-per z-20"
                 >
-                  {t("new_arrivals")}
+                  {/* {t("new_arrivals")}*/} Sri
                 </LinkButton>
+                
               </OverlayContainer>
             </div>
             <div className="w-full">
@@ -84,8 +86,10 @@ const Home: React.FC<Props> = ({ products }) => {
                   href="/product-category/women"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("women_collection")}
+                  {/* {t("women_collection")} */}
+                  Durga
                 </LinkButton>
+               
               </OverlayContainer>
             </div>
             <div className="w-full">
@@ -97,7 +101,8 @@ const Home: React.FC<Props> = ({ products }) => {
                   href="/product-category/men"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("men_collection")}
+                  {/* {t("men_collection")} */}
+                  Textiles
                 </LinkButton>
               </OverlayContainer>
             </div>
@@ -108,8 +113,16 @@ const Home: React.FC<Props> = ({ products }) => {
         <section className="app-max-width w-full h-full flex flex-col justify-center mt-16 mb-20">
           <div className="flex justify-center">
             <div className="w-3/4 sm:w-1/2 md:w-1/3 text-center mb-8">
-              <h2 className="text-3xl mb-4">{t("best_selling")}</h2>
-              <span>{t("best_selling_desc")}</span>
+              <h2 className="text-3xl mb-4">
+                About Us 
+                {/* {t("best_selling")} */}
+                </h2>
+              <span>
+            Sri Durga textiles has always valued its customers giving them the best in quality of products and fine ambience to shop in.
+
+                {/* {t("best_selling_desc")} */}
+                </span>
+               
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 lg:gap-x-12 gap-y-6 mb-10 app-x-padding">
@@ -121,13 +134,13 @@ const Home: React.FC<Props> = ({ products }) => {
         </section>
 
         {/* ===== Testimonial Section ===== */}
-        <section className="w-full hidden h-full py-16 md:flex flex-col items-center bg-lightgreen">
+        {/* <section className="w-full hidden h-full py-16 md:flex flex-col items-center bg-lightgreen">
           <h2 className="text-3xl">{t("testimonial")}</h2>
           <TestiSlider />
-        </section>
+        </section> */}
 
         {/* ===== Featured Products Section ===== */}
-        <section className="app-max-width app-x-padding my-16 flex flex-col">
+        {/* <section className="app-max-width app-x-padding my-16 flex flex-col">
           <div className="text-center mb-6">
             <h2 className="text-3xl">{t("featured_products")}</h2>
           </div>
@@ -142,15 +155,20 @@ const Home: React.FC<Props> = ({ products }) => {
               onClick={handleSeemore}
             />
           </div>
-        </section>
+        </section> */}
 
         <div className="border-gray100 border-b-2"></div>
 
         {/* ===== Our Shop Section */}
         <section className="app-max-width mt-16 mb-20 flex flex-col justify-center items-center text-center">
           <div className="textBox w-3/4 md:w-2/4 lg:w-2/5 mb-6">
-            <h2 className="text-3xl mb-6">{t("our_shop")}</h2>
-            <span className="w-full">{t("our_shop_desc")}</span>
+            <h2 className="text-3xl mb-6">Our Shop
+             {/* {t("our_shop")} */}
+             </h2>
+            <span className="w-full">
+              Pragathi Ganesh Trade Center, Main Road Ajekar.
+              {/* {t("our_shop_desc")} */}
+              </span>
           </div>
           <div className="w-full app-x-padding flex justify-center">
             <Image src={ourShop} alt="Our Shop" />

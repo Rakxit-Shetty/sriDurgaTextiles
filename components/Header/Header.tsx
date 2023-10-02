@@ -95,25 +95,29 @@ const Header: React.FC<Props> = ({ title }) => {
             {/* Left Nav */}
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
-                <Link href={`/product-category/men`}>
-                  <a>{t("men")}</a>
+                
+                <Link href={`#`}>
+                  Mens Collection
+                  {/* <a>{t("men")}</a> */}
                 </Link>
               </li>
               <li>
                 <Link href={`/product-category/women`}>
-                  <a>{t("women")}</a>
+                  {/* <a>{t("women")}</a> */}
+                  Womens Collection
                 </Link>
               </li>
               <li>
                 <Link href="/product-category/bags">
-                  <a>{t("bags")}</a>
+                  {/* <a>{t("bags")}</a> */}
+                  About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/coming-soon">
                   <a>{t("blogs")}</a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             {/* Haru Logo */}
@@ -123,7 +127,8 @@ const Header: React.FC<Props> = ({ title }) => {
                   <a>
                     <Image
                       className="justify-center"
-                      src="/logo.svg"
+                      // src="/logo.svg"
+                      src="/logo2.png"
                       alt="Picture of the author"
                       width={220}
                       height={50}
