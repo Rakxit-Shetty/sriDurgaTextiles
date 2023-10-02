@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-const title = "Haru Fashion";
+const title = "Sri Dura Textiles";
 const desc =
   "Haru Fashion e-commerce developed with Next.JS. Coded with 🖤 by Sat Naing (satnaing.dev).";
 const keywords = "Haru Fashion, Online Shop, E-commerce, Sat Naing, NextJS";

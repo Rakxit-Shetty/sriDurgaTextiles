@@ -11,10 +11,10 @@ type Props = {
 const defaultDesc =
   "Haru Fashion e-commerce developed with Next.JS. Coded with 🖤 by Sat Naing (satnaing.dev).";
 const defaultKeywords =
-  "Haru Fashion, Online Shop, E-commerce, Sat Naing, NextJS";
+  "Sri Durga textiles, Dress Shop, Udupi, Perdur";
 
 const AppHeader: React.FC<Props> = ({
-  title = "Haru Fashion",
+  title = "Sri Durga textiles",
   desc = defaultDesc,
   keywords = defaultKeywords,
 }) => {

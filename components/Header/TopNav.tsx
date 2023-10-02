@@ -46,7 +46,7 @@ const TopNav = () => {
         <ul className={`flex ${styles.topLeftMenu}`}>
           <li>
             <a href="#" aria-label="Haru Fashion Facebook Page">
-              <FacebookLogo />
+              {/* <FacebookLogo /> */}
             </a>
           </li>
           <li>

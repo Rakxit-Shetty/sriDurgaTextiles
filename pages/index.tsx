@@ -3,7 +3,6 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import axios from "axios";
-
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Button from "../components/Buttons/Button";
@@ -26,22 +25,22 @@ const Home: React.FC<Props> = ({ products }) => {
   const [currentItems, setCurrentItems] = useState(products);
   const [isFetching, setIsFetching] = useState(false);
 
-  useEffect(() => {
-    if (!isFetching) return;
-    const fetchData = async () => {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_PROD_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
-      );
-      const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
-        ...product,
-        img1: product.image1,
-        img2: product.image2,
-      }));
-      setCurrentItems((products) => [...products, ...fetchedProducts]);
-      setIsFetching(false);
-    };
-    fetchData();
-  }, [isFetching, currentItems.length]);
+  // useEffect(() => {
+  //   if (!isFetching) return;
+  //   const fetchData = async () => {
+  //     const res = await axios.get(
+  //       `${process.env.NEXT_PUBLIC_PROD_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
+  //     );
+  //     const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
+  //       ...product,
+  //       img1: product.image1,
+  //       img2: product.image2,
+  //     }));
+  //     setCurrentItems((products) => [...products, ...fetchedProducts]);
+  //     setIsFetching(false);
+  //   };
+  //   fetchData();
+  // }, [isFetching, currentItems?.length]);
 
   const handleSeemore = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -114,10 +113,10 @@ const Home: React.FC<Props> = ({ products }) => {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 lg:gap-x-12 gap-y-6 mb-10 app-x-padding">
-            <Card key={currentItems[1].id} item={currentItems[1]} />
+            {/* <Card key={currentItems[1].id} item={currentItems[1]} />
             <Card key={currentItems[2].id} item={currentItems[2]} />
             <Card key={currentItems[3].id} item={currentItems[3]} />
-            <Card key={currentItems[4].id} item={currentItems[4]} />
+            <Card key={currentItems[4].id} item={currentItems[4]} /> */}
           </div>
         </section>
 
@@ -133,7 +132,7 @@ const Home: React.FC<Props> = ({ products }) => {
             <h2 className="text-3xl">{t("featured_products")}</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-10 sm:gap-y-6 mb-10">
-            {currentItems.map((item) => (
+            {currentItems?.map((item) => (
               <Card key={item.id} item={item} />
             ))}
           </div>
@@ -165,33 +164,33 @@ const Home: React.FC<Props> = ({ products }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  let products: itemType[] = [];
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&limit=10`
-  );
-  const fetchedProducts = res.data;
-  fetchedProducts.data.forEach((product: apiProductsType) => {
-    products = [
-      ...products,
-      {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        img1: product.image1,
-        img2: product.image2,
-      },
-    ];
-  });
-  return {
-    props: {
-      messages: {
-        // ...require(`../messages/index/${locale}.json`),
-        ...require(`../messages/common/${locale}.json`),
-      },
-      products,
-    }, // will be passed to the page component as props
-  };
-};
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   let products: itemType[] = [];
+//   const res = await axios.get(
+//     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&limit=10`
+//   );
+//   const fetchedProducts = res.data;
+//   fetchedProducts.data.forEach((product: apiProductsType) => {
+//     products = [
+//       ...products,
+//       {
+//         id: product.id,
+//         name: product.name,
+//         price: product.price,
+//         img1: product.image1,
+//         img2: product.image2,
+//       },
+//     ];
+//   });
+//   return {
+//     props: {
+//       messages: {
+//         // ...require(`../messages/index/${locale}.json`),
+//         ...require(`../messages/common/${locale}.json`),
+//       },
+//       products,
+//     }, // will be passed to the page component as props
+//   };
+// };
 
 export default Home;
